@@ -1,0 +1,1410 @@
+
+/* Gloabal*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+        margin: 0;
+        padding: 0;
+
+        /* make it look decent enough */
+        background: white;
+        color: black;
+        font-family: "Avenir Next", "Avenir", sans-serif, "copperplate";
+    }
+
+    a {
+        text-decoration: none;
+        color: #232323;
+
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: black;
+    }
+
+    #menuToggle { 
+        position: relative;
+        top: 10%;
+        left: 5%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 40%;
+
+        z-index: 1;
+    }
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        left: -5px;
+      
+
+        cursor: pointer;
+
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+    }
+
+    /*
+ * Just a quick hamburger
+ */
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+
+        background-color: dimgray;
+        border-radius: 3px;
+
+        z-index: 1;
+
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    /* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+    #menuToggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: dimgray;
+    }
+
+    /*
+ * But let's hide the middle one.
+ */
+    #menuToggle input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    /*
+ * Ohyeah and the last one should go the other direction
+ */
+    #menuToggle input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    /*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+    #menu {
+        position: absolute;
+        width: 250px;
+        margin: 0px 0 0 -50px;
+        padding: 50px;
+        padding-top: 20px;
+
+        background-color:#BAB2AB;
+        font-family:"avenir";
+        list-style-type: none;
+        /* to stop flickering of text in safari */
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    #menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+    /*
+ * And let's slide it in from the left
+ */
+    #menuToggle input:checked ~ ul {
+        transform: none;
+    }
+
+.baggrund {
+    width: auto;
+    height: auto;
+}
+
+.flex-container {
+    width: 100%;
+    height:auto;
+    background-color: white;
+    text-align: center;
+    font-family: 'Meie Script', cursive;
+    font-size: 25px;
+    color:#BAB2AB;
+    margin-bottom: 40px;
+}
+
+.tekst {
+    margin-top: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.logo {
+    margin-top: 80px;
+}
+
+
+.flex-container3 {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0px;
+}
+
+.billedeafmig {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 1px;
+}
+
+.flex-container4 {
+    width: 100%;
+    height: 300px;
+    background-color: #EFE7DF;
+    color: black;
+    margin-top: 0%;
+    margin: 0%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.flex-container4-1 {    
+   padding-left: 30px;
+   padding-right: 30px;
+   padding-bottom: 30px;
+   padding-top: 20px;
+   margin-top: 30px;
+   background-color:#EFE7DF; 
+}
+
+.bob{
+    margin-top: 130px;
+    background-color: white;
+}
+
+
+.flex-container4-2 {    
+   padding-bottom: 30px;
+   padding-top: 20px;
+   margin: 0%;
+   background-color:white; 
+}
+
+.bob{
+    margin-top: 30px;
+    background-color: white;
+}
+
+.flex-container4-3 {    
+   padding-left: 30px;
+   padding-right: 30px;
+   padding-bottom: 30px;
+   padding-top: 20px;
+   margin-top: 30px;
+   background-color:#EFE7DF; 
+}
+
+.bob{
+    margin-top: 130px;
+    background-color: #EFE7DF;
+}
+
+
+
+.flex-container4-2{
+    margin-bottom: 10%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+   padding-right: 20px;
+}
+
+.flex-container5 {
+    width: 100%;
+    height: 750px;
+    background-color: white;
+    color: black;
+    display: block;
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 20px;
+    
+}
+
+  .rooftop {
+        width: 80%;
+        height: 50%;
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 0%;
+        padding: 0px;
+        
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+    .rooftop:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+ .rooftop1 {
+        width: 80%;
+        height: 50%;
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 0%;
+        padding: 0px;
+        
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+    .rooftop1:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+
+    
+
+    .undertekst {
+        text-align: center;
+        font-family: "copperplate";
+        font-size: 22px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+ .footer {
+    width: 100%;;
+    height: 150px;
+    display: flex;
+    z-index: 1;
+    background-color: #EFE7DF;
+    float: right;
+    text-align: right;
+    padding-right: 50px;
+    padding-top: 30px;
+    font-family: "copperplate";
+  
+    }
+    
+    .kontakt {
+       font-size: 25px; 
+        padding-bottom: 10px;
+        padding-left: 20px;
+        width: 100%;
+        text-align: left;
+        
+    }
+    
+    .kontaktoplysninger {
+        font-size: 15px;
+        padding-bottom: 1px;
+        padding-left: 20px;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .kontaktoplysninger2 {
+        font-size: 15px;
+        padding-left: 20px;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+
+
+    
+    .kontaktsider {
+        width: 70px;
+        height: 60px;
+        float:right;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 10px;
+        margin-left: 20px;
+        
+    }
+
+.sallingrooftop {
+    text-align: center;
+    color: black;
+    width: 90%;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top:75px;
+    margin-bottom: 30px;
+    font-family: "copperplate";
+    font-size: 35px;
+    }
+
+.sallingrooftop1 {
+    text-align: center;
+    color: black;
+    width: 90%;
+    height: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: "copperplate";
+    font-size: 35px;
+    }
+
+
+.forstesemester{
+    margin-top: 55%;
+}
+
+.forstesemester {
+    text-align: left;
+    color: black;
+    width: 90%;
+    height: 50px;
+    margin-right: 30px;
+    margin-top:75px;
+    margin-bottom: 30px;
+    font-family: "copperplate";
+    font-size: 25px;
+}
+
+.forstesemesterleft {
+    text-align: left;
+    color: black;
+    width: 95%;
+    height: 50px;
+    margin-right: 30px;
+    margin-top:75px;
+    margin-bottom: 30px;
+    font-family: "copperplate";
+    font-size: 25px;
+}
+
+.forstesemesterright {
+    text-align: left;
+    color: black;
+    width: 95%;
+    height: 50px;
+    margin-right: 30px;
+    margin-top:75px;
+    margin-bottom: 30px;
+    font-family: "copperplate";
+    font-size: 25px;
+}
+
+.detaljer {
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+/*tablet*/
+@media (min-width: 768px) and (max-width: 1023px){
+    * {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+        margin: 0;
+        padding: 0;
+
+        /* make it look decent enough */
+        background: white;
+        color: black;
+        font-family: "Avenir Next", "Avenir", sans-serif, "copperplate";
+    }
+
+    a {
+        text-decoration: none;
+        color: #232323;
+
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: black;
+    }
+
+    #menuToggle { 
+        position: relative;
+        top: 10%;
+        left: 5%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 40%;
+
+        z-index: 1;
+    }
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        left: -5px;
+      
+
+        cursor: pointer;
+
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+    }
+
+    /*
+ * Just a quick hamburger
+ */
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+
+        background-color: dimgray;
+        border-radius: 3px;
+
+        z-index: 1;
+
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    /* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+    #menuToggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: dimgray;
+    }
+
+    /*
+ * But let's hide the middle one.
+ */
+    #menuToggle input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    /*
+ * Ohyeah and the last one should go the other direction
+ */
+    #menuToggle input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    /*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+    #menu {
+        position: absolute;
+        width: 250px;
+        margin: 0px 0 0 -50px;
+        padding: 50px;
+        padding-top: 20px;
+
+        background-color:#EFE7DF;
+        font-family:"avenir";
+        list-style-type: none;
+        /* to stop flickering of text in safari */
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    #menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+    /*
+ * And let's slide it in from the left
+ */
+    #menuToggle input:checked ~ ul {
+        transform: none;
+    }
+
+.baggrund {
+    width: auto;
+    height: auto;
+}
+
+.flex-container {
+    width: 100%;
+    height:auto;
+    background-color: white;
+    text-align: center;
+    font-family: 'Meie Script', cursive;
+    font-size: 25px;
+    color: #BAB2AB;
+    margin-bottom: 40px;
+}
+
+.tekst {
+    margin-top: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.logo {
+    margin-top: 50px;
+}
+
+
+.flex-container3 {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 0px;
+}
+
+.billedeafmig {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 1px;
+}
+
+.flex-container4 {
+    width: 100%;
+    height: 300px;
+    background-color: #EFE7DF;
+    color: black;
+    margin-top: 300px;
+}
+    .forstesemester123{
+        margin-top: 47.5%;
+        padding: 1%;
+    }
+    .forstesemester12{
+        margin-top: 20%;
+    }
+
+    .forstesemester1{
+        margin-top: 13%;
+    }
+
+
+
+.flex-container5 {
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    
+}
+
+    .flex-container5-1 {
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+    .flex-container5-1-1 {
+    width: 100%;
+    height: 600px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+    
+    .flex-container4-3-2 {
+        width: 100%;
+        height: auto;
+    background-color: white;
+    float: left;
+    padding-bottom: 40px;
+    }
+    
+    .undertekst {
+        text-align: center;
+        font-family: "copperplate";
+        font-size: 22px;
+        margin-top: 20px;
+        width: 225px;
+    }
+    
+  .rooftop {
+        width: 80%;
+        height: auto;
+        margin-top: 20%;
+        margin-left: 10%;
+        margin-right: 0%;
+        padding: 0px;
+        
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.rooftop:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+    
+
+    .undertekst {
+        text-align: center;
+        font-family: "copperplate";
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+ .footer {
+    width: 100%;;
+    height: 150px;
+    background-color: #EFE7DF;
+    float: right;
+    text-align: right;
+    padding-right: 50px;
+    padding-top: 30px;
+    font-family: "copperplate";
+  
+    }
+    
+    .kontakt {
+       font-size: 25px; 
+        padding-bottom: 10px;
+        padding-left: 20px;
+        width: 100%;
+        text-align: left;
+        
+    }
+    
+    .kontaktoplysninger {
+        font-size: 15px;
+        padding-bottom: 1px;
+        padding-left: 20px;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .kontaktoplysninger2 {
+        font-size: 15px;
+        padding-left: 20px;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+
+
+    
+    .kontaktsider {
+        width: 50px;
+        height: 40px;
+        float:right;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 10px;
+        margin-left: 20px;
+        
+    }
+
+.sallingrooftop {
+    text-align: center;
+    color: black;
+    width: 90%;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top:75px;
+    font-family: "copperplate";
+    font-size: 35px;
+    }
+
+.sallingrooftop1 {
+    text-align: center;
+    color: black;
+    width: 90%;
+    height: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: "copperplate";
+    font-size: 35px;
+    }
+    
+    .sallogrooftoplogo {
+        padding-top: 60px;
+        width: 500px;
+        height: 350px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    
+    .sallogrooftoplogo1 {
+        padding-top: 40px;
+        width: 500px;
+        height: 300px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    
+    .forstesemester {
+    text-align: center;
+    color: black;
+    width: 95%;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top:20px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    font-family: "copperplate";
+    font-size: 25px;
+}
+    
+    .forstesemester2 {
+    text-align: center;
+    color: black;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top:5px;
+    margin-bottom: 30px;
+    font-family: "avenir";
+}
+    
+     .forstesemesterleft {
+    text-align: left;
+    color: black;
+    width: 95%;
+    height: 50px;
+    margin-left: 40px;
+    margin-right: 30px;
+    margin-top:75px;
+    margin-bottom: 30px;
+    font-family: "copperplate";
+    font-size: 25px;
+    padding-left: 25px;
+}
+    .forstesemesterright {
+    text-align: left;
+    color: black;
+    width: 95%;
+    height: 50px;
+    margin-left: 40px;
+    margin-right: 30px;
+    margin-top:75px;
+    margin-bottom: 30px;
+    font-family: "copperplate";
+    font-size: 25px;
+    padding-left: 25px;
+}
+    
+     .arbejdsproces {
+    text-align: left;
+    color: black;
+    width: 100%px;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "avenir";
+}
+    .arbejdsproces1 {
+        text-align: left;
+        width: 100%;
+    }
+    
+    .arbejdsproces {
+    text-align: left;
+    color: black;
+    width: 100%px;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "avenir";
+    padding-left: 25px;
+}
+    
+    .arbejdsprocesright {
+    text-align: left;
+    color: black;
+    width: 100%px;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "avenir";
+    padding-left: 25px;
+}
+    
+    .flex-container4-1 {
+    width: 100%;
+    height: auto;
+    float: right;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    }
+    .bob{
+        margin-top: 0%;
+        background-image: url("marmor.jpeg");
+    }
+    
+     .flex-container4-2 {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    float: right;
+    padding-bottom: 40px;
+    }
+    
+    .flex-container4-3 {
+    width: 100%;
+    height: 2px;
+    background-color: #EFE7DF;
+    float: right;
+    }
+    
+     .rooftop1 {
+        width: 200px;
+        height: 125px;
+        margin-top: 70px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0px;
+        display:flex;
+        
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.rooftop1:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+    
+    .rooftop1-2 {
+        width: 200px;
+        height: 125px;
+        margin-top: 70px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0px;
+        display:flex;
+        
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.rooftop1-2:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+    
+    .kontaktright {
+        width: 400px;
+        height: 200px;
+        float: right;
+        margin-right: 30px;
+        padding: 0%;
+    }
+    
+}
+
+
+
+
+/*desktop*/
+@media(min-width:1024px){
+    
+    .flex-container {
+    width: 50%;
+    height: 651px;
+    float:left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    }
+    
+    .sallingrooftop {
+    text-align: center;
+    color: black;
+    width: 88%;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top:75px;
+    font-family: "copperplate";
+    font-size: 35px;
+    }
+    
+    .sallogrooftoplogo {
+        width: 640px;
+        height: 340px;
+    }
+    
+    .sallingrooftop1 {
+    text-align: center;
+    color: black;
+    width: 582px;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: "copperplate";
+    font-size: 35px;
+    }
+    
+    .sallogrooftoplogo1 {
+        padding-top: 60px;
+        width: 500px;
+        height: 325px;
+        padding-left: 100px;
+        padding-right: 100px; 
+    }
+    
+    .detaljer {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .flex-container3 {
+    width: 50%;
+    height: 651px;
+    float: right;
+    }
+    
+    .billedeafmig {
+        width: 100%;
+        height: 651px;   
+    }
+    
+    .flex-container4 {
+    width: 100%;
+    height: 400px;
+    background-color: #EFE7DF;
+    float: right;
+    }
+    
+    
+    .forstesemester {
+    text-align: center;
+    color: black;
+    width: 95%;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top:75px;
+    margin-bottom: 30px;
+    font-family: "copperplate";
+    font-size: 25px;
+}
+    .forstesemesterleft {
+    text-align: left;
+    color: black;
+    width: 95%;
+    height: 50px;
+    margin-left: 40px;
+    margin-right: 30px;
+    margin-top:75px;
+    margin-bottom: 30px;
+    font-family: "copperplate";
+    font-size: 25px;
+}
+    .forstesemesterright {
+    text-align: right;
+    color: black;
+    width: 95%;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 40px;
+    margin-top:75px;
+    margin-bottom: 30px;
+    font-family: "copperplate";
+    font-size: 25px;
+}
+    
+    .forstesemester2 {
+    text-align: center;
+    color: black;
+    width: 95%;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top:5px;
+    margin-bottom: 30px;
+    font-family: "avenir";
+}
+    
+    .forstesemester3 {
+    text-align: center;
+    color: black;
+    width: 95%;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top:75px;
+    margin-bottom: 30px;
+    font-family: "copperplate";
+    font-size: 25px;
+    }
+    
+    .flex-container4-1.bob {
+        width: 100%;
+        height: auto;
+        background-color: white;
+    }
+    
+    .flex-container4-1 {
+    width: 100%;
+    height: auto;
+    background-color: #EFE7DF;
+    float: right;
+    padding-bottom: 40px;
+    margin: 0%;
+    }
+    
+    .flex-container4-2 {
+    width: 100%;
+    height: auto;
+    background-color: #EFE7DF;
+    float: right;
+    margin-right: 0%;
+    margin-bottom: 0%;
+    }
+    
+    .flex-container4-3-2 {
+        width: 100%;
+        height: auto;
+    background-color: white;
+    float: left;
+    padding-bottom: 40px;
+    }
+    
+    .arbejdsproces {
+    text-align: left;
+    color: black;
+    width: 100%px;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "avenir";
+}
+    
+    .arbejdsprocesright {
+    text-align: right;
+    color: black;
+    width: 100%px;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "avenir";
+}
+    
+    .arbejdsprocescenter {
+    text-align:center;
+    color: black;
+    width: 100%px;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "avenir";
+}
+    
+    
+    .flex-container5 {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    background-color: white;
+    color: black;
+    float: right;   
+}
+    
+     .flex-container5-1 {
+    width: 100%;
+    height: 400px;
+    background-color: #EFE7DF;
+    color: black;
+    float: right;   
+}
+    .forstesemester1{
+
+    }
+
+    .rooftop {
+        width: 80%;
+        height: 50%;
+        margin-top: 20%;
+        margin-left: 10%;
+        margin-right: 0%;
+        padding: 0px;
+        display:flex;
+        
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.rooftop:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+    
+    .rooftop1 {
+        width: 300px;
+        height: 200px;
+        margin-top: 70px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0px;
+        display:flex;
+        
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+    .rooftop1:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+    
+
+    .undertekst {
+        text-align: center;
+        font-family: "copperplate";
+        font-size: 22px;
+        margin-top: 20px;
+    }
+    
+    .flex-container6 {
+        
+    }
+    
+
+    
+    .footer {
+    width: 100%;;
+    height: 175px;
+    background-color: #EFE7DF;
+    float: right;
+    text-align: right;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: "copperplate";
+  
+    }
+    
+    .kontakt {
+       font-size: 25px; 
+        padding-bottom: 10px;
+        width: 100%;
+        float: right;
+        text-align: right;
+    }
+    
+    .kontaktoplysninger {
+        font-size: 15px;
+        width: 100%;
+        float: right;
+        text-align: right;
+        padding: 0px;
+        margin: 0px;
+        font-family: "avenir";
+    }
+    
+     .kontaktoplysninger2 {
+        font-size: 15px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        text-align: right;
+        margin: 0px;
+        font-family: "avenir";
+        
+    }
+    
+    .kontaktsider {
+        width: 80px;
+        height: 50px;
+        float: left;
+        padding-top: 0px;
+        padding-left: 20px;
+        padding-right: 10px;
+        margin-left: 20px;
+        margin-top: 25px;
+        
+    }
+    
+    .flex-container5-1 {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    
+}
+    
+    .rooftop1-2 {
+        width: 300px;
+        height: 200px;
+        margin-top: 70px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0px;
+        display:flex;
+        
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.rooftop1-2:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+    
+    .taenkebob {
+        width: 400px;
+        height: 300px;
+        float: right;
+        padding-right: 10px;
+        padding-left: 30px;
+    }
+    
+    .taenkebobleft {
+        width: 400px;
+        height: 300px;
+        float: left;
+        padding-right: 10px;
+        padding-left: 30px;
+    }
+    
+    .paere {
+        width: 300px;
+        height: 250px;
+        float: left;
+        padding-left: 10px;
+        padding-right: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .paereright {
+        width: 300px;
+        height: 250px;
+        float: left;
+        padding-left: 10px;
+        padding-right: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .welldoneright {
+        width: 400px;
+        height: 250px;
+        float: right;
+        padding-left: 10px;
+        padding-right: 30px;
+    }
+    
+    .kontaktright {
+        width: 400px;
+        height: 200px;
+        float: right;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        padding: 0%;
+    }
+    
+    .kontaktbillede{
+        float: left;
+        width: 150px;
+        height: 400px;
+    }
+   
+}
+
+
+
+
+
